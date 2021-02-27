@@ -26,3 +26,15 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function randomFunFact(){
+    const facts = 
+        ["Efraín is the funniest person Efraín knows.", "Efraín has two pet dogs, and one cat.", 
+        "Efraín has had a driver's license for four years, but has never owned a car. (He's also super into car culture.)",
+        "[1] public class hotTake(){ \n[2] \"Plaid is a fashion statement.\" \n[3] if (you disagree) {\n[4] hotTake() \n[5]}"]
+
+        const funFact = facts[Math.floor(Math.random() * facts.length)];
+
+        const funFactContainer = document.getElementById("funFact-container");
+        funFactContainer.innerText = funFact;
+    }
