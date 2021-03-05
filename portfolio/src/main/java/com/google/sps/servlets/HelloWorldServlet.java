@@ -15,7 +15,7 @@ public class HelloWorldServlet extends HttpServlet {
     response.setContentType("text/html;");
     response.getWriter().println("<h1>Hello world!</h1>");
     response.getWriter().println("<p> This is Efrain coming at you live from the studio! <p>");
-    response.getWriter().println("<a href= \"/Images/sleepy_cat.jpg\"><img src=\"/Images/sleepy_cat.jpg\" style=\"width:250px;height:auto;\"/><a>");
+    response.getWriter().println("<a href= \"/Images/sleepy_cat.jpg\"><img \"src=\"/Images/sleepy_cat.jpg\" style=\"width:250px;height:auto;\"/><a>");
     response.getWriter().println("<p> This is my cat Tito, also coming at you live from the studio (but a little sleepy).<p>");
   }
 }
