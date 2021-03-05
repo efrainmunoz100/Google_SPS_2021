@@ -27,6 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+/** Returns a string containgin a fun fact about Efrain */
 function randomFunFact(){
     const facts = 
         ["Efraín is the funniest person Efraín knows.", "Efraín has two pet dogs, and one cat.", 
@@ -38,3 +39,12 @@ function randomFunFact(){
         const funFactContainer = document.getElementById("funFact-container");
         funFactContainer.innerText = funFact;
     }
+
+/** Returns a string showing the server response from /fetch */
+async function showServerResponse(){
+    const response = await fetch('/fetchServlet');
+    const responseText = await response.text();
+
+    const responseContainer = document.getElementById('serverResponse-container');
+    responseContainer.innerText = responseText;
+}
