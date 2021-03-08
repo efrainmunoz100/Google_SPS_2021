@@ -42,9 +42,9 @@ function randomFunFact(){
 
 /** Returns a string showing the server response from /fetch */
 async function showServerResponse(){
-    const response = await fetch('/fetchServlet');
+    const response = await fetch("/fetchServlet");
     const responseText = await response.text();
 
-    const responseContainer = document.getElementById('serverResponse-container');
+    const responseContainer = document.getElementById("serverResponse-container");
     responseContainer.innerText = responseText;
 }
