@@ -15,24 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/jsonServlet")
 public class jsonServlet extends HttpServlet {
 
-List<String> quoteList =  Arrays.asList(
-    "Reality can be whatever I want it to be.",
-    "Do you know... The Muffin Man? \n The Muffin Man? \n THE MUFFIN MAN!",
-    "I can't believe I put on my good crocs for this.",
-    "Beds are lowkey slept on. ",
-    "If you can't handle me at my worst, imagine how I feel",
-    "I may be stupid \n \n",
-    "Hold on I'm trying to remember the second number of the alphabet",
-    "I'm not like the other girls \n I'm worse", 
-    "Be a hero: Eat the straw so the turtles don't have to :)");
-
-Gson gson = new Gson();
-String json = gson.toJson(quoteList);
-
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("application/json;");
+    public static final List<String> QUOTE_LIST =  Arrays.asList(
+        "Reality can be whatever I want it to be.",
+        "Do you know... The Muffin Man? \n The Muffin Man? \n THE MUFFIN MAN!",
+        "I can't believe I put on my good crocs for this.",
+        "Beds are lowkey slept on. ",
+        "If you can't handle me at my worst, imagine how I feel",
+        "I may be stupid \n \n",
+        "Hold on I'm trying to remember the second number of the alphabet",
+        "I'm not like the other girls \n I'm worse", 
+        "Be a hero: Eat the straw so the turtles don't have to :)");
     
-    response.getWriter().println(json);
+    public static final Gson gson = new Gson();
+    public static final String json = gson.toJson(QUOTE_LIST);
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json;");
+        
+        response.getWriter().println(json);
   }
 }
