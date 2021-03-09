@@ -15,6 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -39,6 +40,17 @@ function randomFunFact(){
         const funFactContainer = document.getElementById("funFact-container");
         funFactContainer.innerText = funFact;
     }
+
+/** Returns a string containing on of my favorite quotes. This function gets the quotes from /jsonServlet. */
+async function randomQuote(){
+    const response = await fetch("/jsonServlet");
+    const jsonResponse = await response.json();
+
+    const randomQuoteFromResponse = jsonResponse[Math.floor(Math.random() * jsonResponse.length)];
+
+    const randomQuoteContainer = document.getElementById("quote-container");
+    randomQuoteContainer.innerText = randomQuoteFromResponse;    
+}
 
 /** Returns a string showing the server response from /fetch */
 async function showServerResponse(){

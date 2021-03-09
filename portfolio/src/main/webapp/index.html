@@ -12,6 +12,9 @@
       <h2>This is Efraín</h2>
       <img src="/Images/Efrain_profile_photo.jpg"/>
       <p>Efraín is a sophomore at Cornell University currently studying Computer Science, with a focus in UX and App Development.</p>
+      <button onclick=randomFunFact();>Random Fun Fact About Efraín</button>
+      <div id="funFact-container"></div>
+      <h2> Server Tests</h2>
       <p> Click this button to see my cat! </p>
       <a href="/hello"> <button> Cat </button> </a>
       <p> Click this button to send a request to the server, and see what the server has to say!</p>
@@ -24,8 +27,10 @@
           <input type="submit"/>
       </form>
       <br />
-      <button onclick=randomFunFact();>Random Fun Fact About Efraín</button>
-      <div id="funFact-container"></div>
+      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+      <p> Click this button to see one of my favorite quotes. </p>
+      <button onclick="randomQuote()"> Random Quote</button>
+      <p id="quote-container"></p>
       <h2>Efraín's Projects</h2>
       <h3>Modelling a Rocket Launch in Python</h3>
       <p>Using formulas for modeling the force of attraction between objects, and using different equations to determine the change in velocity and position due to that force, Efraínmodeled the path of planets through our solar system, and modeled the launch of a rocket from Earth to Mars in Python.</p>
