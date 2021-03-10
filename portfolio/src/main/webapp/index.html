@@ -26,6 +26,13 @@
           <br/>
           <input type="submit"/>
       </form>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <p>Send me your best memes here: </p>
+        <input type="file" name="image">
+        <br/>
+        <button>Submit</button>
+      </form>
+      <a href="userUploads"> <button>See User Submissions</button></a>
       <br />
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <p> Click this button to see one of my favorite quotes. </p>
