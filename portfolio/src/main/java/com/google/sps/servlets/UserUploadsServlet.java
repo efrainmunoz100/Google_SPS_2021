@@ -11,14 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/userUploads")
-public class userUploadsServlet extends HttpServlet{
+@WebServlet("/user-uploads")
+public class UserUploadsServlet extends HttpServlet{
+    private static final String projectId = "emunoz-sps-spring21";
+    private static final String bucketName = "emunoz-sps-spring21.appspot.com";
+
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         // List all of the uploaded files.
-        String projectId = "emunoz-sps-spring21";
-        String bucketName = "emunoz-sps-spring21.appspot.com";
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         Bucket bucket = storage.get(bucketName);
         Page<Blob> blobs = bucket.list();
@@ -30,9 +31,9 @@ public class userUploadsServlet extends HttpServlet{
         // Output <img> elements as HTML.
         response.setContentType("text/html;");
         for (Blob blob : blobs.iterateAll()) {
-        String imgTag = String.format("<img src=\"%s\" />", blob.getMediaLink());
-        response.getWriter().println(imgTag);
-        response.getWriter().println("<br>");
+            String imgTag = String.format("<img src=\"%s\" />", blob.getMediaLink());
+            response.getWriter().println(imgTag);
+            response.getWriter().println("<br>");
         }
     }
 

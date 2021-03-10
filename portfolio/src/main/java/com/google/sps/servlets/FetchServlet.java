@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Responds with text when a request is sent to the /fetch URL */
 @WebServlet ("/fetchServlet")
-public class fetchServlet extends HttpServlet{
+public class FetchServlet extends HttpServlet{
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         response.setContentType("text/html;");
