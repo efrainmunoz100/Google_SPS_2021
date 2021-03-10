@@ -23,6 +23,10 @@ public class userUploadsServlet extends HttpServlet{
         Bucket bucket = storage.get(bucketName);
         Page<Blob> blobs = bucket.list();
 
+        // Add option to return to main page
+        response.getWriter().println("<h1>User Submissions</h1>");
+        response.getWriter().println("<h2>Click <a href=\"/\">here<a/> to return to the main page</h2>");
+
         // Output <img> elements as HTML.
         response.setContentType("text/html;");
         for (Blob blob : blobs.iterateAll()) {
