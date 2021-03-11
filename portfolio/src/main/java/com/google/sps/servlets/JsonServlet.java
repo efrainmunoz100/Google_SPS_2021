@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Handles requests sent to the /josnServlet URL, and returns a json object with a list of my favorite quotes. */
 @WebServlet("/jsonServlet")
-public class jsonServlet extends HttpServlet {
+public class JsonServlet extends HttpServlet {
 
     public static final List<String> QUOTE_LIST =  Arrays.asList(
         "Reality can be whatever I want it to be.",
