@@ -24,8 +24,8 @@ import javax.servlet.http.Part;
 @MultipartConfig
 public class UploadServlet extends HttpServlet{
 
-    private static final String projectId = "emunoz-sps-spring21";
-    private static final String bucketName = "emunoz-sps-spring21.appspot.com";
+    private static final String PROJECT_ID = "emunoz-sps-spring21";
+    private static final String BUCKET_NAME = "emunoz-sps-spring21.appspot.com";
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -49,8 +49,8 @@ public class UploadServlet extends HttpServlet{
       /** Uploads a file to Cloud Storage and returns the uploaded file's URL. */
   private static String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
     Storage storage =
-        StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    BlobId blobId = BlobId.of(bucketName, fileName);
+        StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+    BlobId blobId = BlobId.of(BUCKET_NAME, fileName);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
 
     // Upload the file to Cloud Storage.
