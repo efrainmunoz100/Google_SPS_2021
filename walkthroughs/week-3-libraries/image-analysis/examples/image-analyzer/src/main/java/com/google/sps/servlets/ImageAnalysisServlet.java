@@ -110,8 +110,8 @@ public class ImageAnalysisServlet extends HttpServlet {
 
   /** Uploads a file to Cloud Storage and returns the uploaded file's URL. */
   private static String uploadToCloudStorage(String fileName, byte[] fileBytes) {
-    String projectId = "YOUR_PROJECT_ID";
-    String bucketName = "YOUR_PROJECT_ID.appspot.com";
+    String projectId = "emunoz-sps-spring21";
+    String bucketName = "emunoz-sps-spring21.appspot.com";
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, fileName);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
