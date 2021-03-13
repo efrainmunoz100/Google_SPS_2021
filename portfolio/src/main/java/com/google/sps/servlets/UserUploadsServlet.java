@@ -13,15 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/user-uploads")
 public class UserUploadsServlet extends HttpServlet{
-    private static final String projectId = "emunoz-sps-spring21";
-    private static final String bucketName = "emunoz-sps-spring21.appspot.com";
+    private static final String PROJECT_ID = "emunoz-sps-spring21";
+    private static final String BUCKET_NAME = "emunoz-sps-spring21.appspot.com";
 
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         // List all of the uploaded files.
-        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        Bucket bucket = storage.get(bucketName);
+        Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+        Bucket bucket = storage.get(BUCKET_NAME);
         Page<Blob> blobs = bucket.list();
 
         // Add option to return to main page
